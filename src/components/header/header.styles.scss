@@ -1,0 +1,55 @@
+  .header-container {
+  
+  height: 100px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
+  text-transform: capitalize;
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-body-container {
+    height: 90px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 90%;
+
+    .title-container{
+      display: flex;
+      flex-direction: row;
+      .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 9px;
+      }
+  
+      .title-content{
+
+        font-family: "Lobster",  sans-serif;
+        font-weight: 900;
+        margin: 0 6px 0;
+        font-size: 30px;
+        color: rgb(30 163 174);
+        text-shadow: 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63), 0 0 4px rgb(0, 3, 63);
+      }
+
+
+    }
+
+
+   
+  }
+}
+
