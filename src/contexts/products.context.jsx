@@ -3,7 +3,7 @@ import products from '../assets/data/products.data.json';
 
 const getMockedProducts = () => Promise.resolve(products);
 
-// the actual value yoe want to access.
+// the actual value you want to access.
 export const ProductsContext = createContext({
     products: []
 });

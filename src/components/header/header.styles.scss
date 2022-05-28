@@ -4,7 +4,7 @@
   flex: 1 1 auto;
   display: flex;
   align-items: center;
-  margin: 0 7.5px 15px;
+  margin-bottom: 15px;
   overflow: hidden;
   text-transform: capitalize;
 
@@ -17,13 +17,13 @@
 
   .header-body-container {
     height: 90px;
-    padding: 0 25px;
+    padding: 0 2px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    width: 90%;
+    width: 98%;
 
     .title-container{
       display: flex;
