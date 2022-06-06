@@ -1,0 +1,14 @@
+.category-page-container{
+    .title{
+        font-size: 33px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .category-page-body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        row-gap: 50px;
+    }
+}
