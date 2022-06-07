@@ -12,7 +12,7 @@ const Category = () => {
     const [products, setProducts] = useState(categories[category]?.items);
 
     useEffect(() => {
-        setProducts(categories[category].items);
+        setProducts(categories[category]?.items);
     }, [categories, category]);
 
     return (
