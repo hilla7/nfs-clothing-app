@@ -1,6 +1,8 @@
-const PRODUCTS = [
+const SHOP_DATA = [
     {
-        title: 'Hats',
+        id: 1,
+        title: 'hats',
+        imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
         items: [
             {
                 id: 1,
@@ -59,7 +61,9 @@ const PRODUCTS = [
         ],
     },
     {
-        title: 'Sneakers',
+        id: 2,
+        title: 'sneakers',
+        imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
         items: [
             {
                 id: 10,
@@ -112,7 +116,9 @@ const PRODUCTS = [
         ],
     },
     {
-        title: 'Jackets',
+        id: 3,
+        title: 'jackets',
+        imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
         items: [
             {
                 id: 18,
@@ -147,7 +153,9 @@ const PRODUCTS = [
         ],
     },
     {
-        title: 'Womens',
+        id: 4,
+        title: 'women',
+        imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
         items: [
             {
                 id: 23,
@@ -194,7 +202,9 @@ const PRODUCTS = [
         ],
     },
     {
-        title: 'Mens',
+        id: 5,
+        title: 'men',
+        imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
         items: [
             {
                 id: 30,
@@ -236,4 +246,4 @@ const PRODUCTS = [
     },
 ];
 
-export default PRODUCTS;
+export default SHOP_DATA;

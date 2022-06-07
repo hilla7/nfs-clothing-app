@@ -9,10 +9,10 @@ const Category = () => {
 
     const { category } = useParams();
     const { categories } = useContext(CategoriesContext);
-    const [products, setProducts] = useState(categories[category]);
+    const [products, setProducts] = useState(categories[category]?.items);
 
     useEffect(() => {
-        setProducts(categories[category]);
+        setProducts(categories[category].items);
     }, [categories, category]);
 
     return (

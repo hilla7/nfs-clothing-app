@@ -1,8 +1,7 @@
-import categories from '../../assets/data/categories.data.json';
 import Categories from '../../components/categories/categories.component';
 
 const Home = () => {
-    return (<Categories categories={categories} />);
+    return (<Categories />);
 }
 
 export default Home;
