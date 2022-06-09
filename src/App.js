@@ -8,7 +8,8 @@ import Checkout from "./routes/checkout/checkout.component";
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Shop from "./routes/shop/shop.component";
-import { createUserDocumentFromAuth, onAuthStateChangeListener } from "./utils/firebase/firebase.util";
+import { createUserDocumentFromAuth, getCategoriesAndDocuments, onAuthStateChangeListener } from "./utils/firebase/firebase.util";
+import { setCategories } from "./redux/categories/categories.action";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,15 @@ const App = () => {
       console.log('logged-in user:', userAuth?.email);
     });
     return unsubscribe;
+  }, [dispatch]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const categories = await getCategoriesAndDocuments();
+      dispatch(setCategories(categories));
+    };
+
+    fetchData();
   }, [dispatch]);
 
   return (

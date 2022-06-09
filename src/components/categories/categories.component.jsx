@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import Category from "../category/category.component";
-import { CategoriesContext } from "../../contexts/categories.context";
 
 import './categories.styles.scss'
+import { selectCategories } from "../../redux/categories/categories.selector";
 
 const Categories = () => {
-    const { categories } = useContext(CategoriesContext);
+    const categories = useSelector(selectCategories);
     return (
         <div className="categories-container">
             {Object.keys(categories).map(categoryKey => {
