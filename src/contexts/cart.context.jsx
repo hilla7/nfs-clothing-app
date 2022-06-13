@@ -3,18 +3,18 @@ import { addCartItem, calculateCount, calculateTotal, clearCartItem, removeCartI
 import { createAction } from "../utils/reducer/reducer.util";
 
 export const CartContext = createContext({
-    isCartDropdownVisible: false,
+    isCartOpen: false,
     cartItems: [],
     cartCount: 0,
     cartTotal: 0,
-    setIsCartDropdownVisible: () => null,
+    setIsCartOpen: () => null,
     addItemToCart: () => null,
     removeItemFromCart: () => null,
     clearItemFromCart: () => null,
 });
 
 const CART_ACTION_TYPE = {
-    TOGGLE_CART_VISIBILITY: 'TOGGLE_CART_VISIBILITY',
+    SET_IS_CART_OPEN: 'SET_IS_CART_OPEN',
     SET_CART_ITEMS: 'SET_CART_ITEMS',
 }
 
@@ -22,10 +22,10 @@ const cartReducer = (state, action) => {
     const { type, payload } = action;
 
     switch (type) {
-        case CART_ACTION_TYPE.TOGGLE_CART_VISIBILITY:
+        case CART_ACTION_TYPE.SET_IS_CART_OPEN:
             return {
                 ...state,
-                isCartDropdownVisible: payload,
+                isCartOpen: payload,
             }
         case CART_ACTION_TYPE.SET_CART_ITEMS:
             return {
@@ -38,7 +38,7 @@ const cartReducer = (state, action) => {
 }
 
 const INITIAL_STATE = {
-    isCartDropdownVisible: false,
+    isCartOpen: false,
     cartItems: [],
     cartCount: 0,
     cartTotal: 0,
@@ -46,10 +46,10 @@ const INITIAL_STATE = {
 
 export const CartProvider = ({ children }) => {
 
-    const [{ isCartDropdownVisible, cartItems, cartCount, cartTotal }, dispatch] = useReducer(cartReducer, INITIAL_STATE);
+    const [{ isCartOpen, cartItems, cartCount, cartTotal }, dispatch] = useReducer(cartReducer, INITIAL_STATE);
 
-    const setIsCartDropdownVisible = (isVisible) => {
-        dispatch(createAction(CART_ACTION_TYPE.TOGGLE_CART_VISIBILITY, isVisible));
+    const setIsCartOpen = (isOpen) => {
+        dispatch(createAction(CART_ACTION_TYPE.SET_IS_CART_OPEN, isOpen));
     }
 
     const addItemToCart = (productToAdd) => {
@@ -73,8 +73,8 @@ export const CartProvider = ({ children }) => {
     }
 
     const value = {
-        isCartDropdownVisible,
-        setIsCartDropdownVisible,
+        isCartOpen,
+        setIsCartOpen,
         cartItems,
         addItemToCart,
         removeItemFromCart,

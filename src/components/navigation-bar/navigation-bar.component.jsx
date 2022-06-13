@@ -1,17 +1,17 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { CartContext } from '../../contexts/cart.context';
 import { signOutUser } from '../../utils/firebase/firebase.util';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import CartIcon from '../cart-icon/cart-icon.component';
 import { selectCurrentUser } from '../../redux/user/user.selector';
+import { selectIsCartOpen } from '../../redux/cart/cart.selector';
+
 import './navigation-bar.styles.scss';
 
 export const NavigationBar = () => {
     const currentUser = useSelector(selectCurrentUser);
-    const { isCartDropdownVisible } = useContext(CartContext);
+    const isCartOpen = useSelector(selectIsCartOpen);
 
     return (
         <div className='navigation-bar-container'>
@@ -27,6 +27,6 @@ export const NavigationBar = () => {
             )
             }
             <CartIcon />
-            {isCartDropdownVisible && <CartDropdown />}
+            {isCartOpen && <CartDropdown />}
         </div>)
 };
